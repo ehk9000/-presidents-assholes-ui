@@ -4,7 +4,7 @@ import './PresDetails.scss';
 const PresDetails = (props) => {
   let {
     number, president, birth_year, death_year,
-     took_office,left_office, party} = props;
+    took_office,left_office, party} = props;
   return (
     <article>
       <ul>

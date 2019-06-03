@@ -1,5 +1,6 @@
 import React from 'react';
 import PresContainer from '../../containers/PresContainer/PresContainer';
+import './App.scss';
 
 const App = () => {
     return (
