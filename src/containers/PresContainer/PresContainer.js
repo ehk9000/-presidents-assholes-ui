@@ -29,12 +29,22 @@ class PresContainer extends Component {
     return displayLoading
   }
 
+  displayError = () => {
+    let displayError;
+    let { error } = this.props
+    displayError = error
+    return displayError;
+  }
+
+
   render() {
     const assignPres = this.assignPres();
     const displayLoading = this.displayLoading();
+    const displayError = this.displayError();
     return (
       <main>
         {displayLoading}
+        {displayError}
         {assignPres}
       </main>
 
