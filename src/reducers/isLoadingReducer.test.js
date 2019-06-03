@@ -4,7 +4,6 @@ import * as actions from '../actions';
 describe('isLoadingReducer', () => {
   it('should return the initial state', () => {
     const expected = false;
-
     const result = isLoadingReducer(undefined, {});
 
     expect(result).toEqual(expected);
@@ -14,6 +13,7 @@ describe('isLoadingReducer', () => {
     const expected = true;
     const action = actions.isLoading(true);
     const result = isLoadingReducer(false, action);
+    
     expect(result).toEqual(expected)
   });
 
