@@ -38,7 +38,7 @@ export const mapStateToProps = ({ presidents }) => ({
 
 export const mapDispatchToProps = dispatch => ({
   fetchPresidents: url => dispatch(fetchPresidents(url))
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(PresContainer);
 
