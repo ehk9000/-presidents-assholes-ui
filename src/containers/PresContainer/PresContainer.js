@@ -1,17 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchPresidents } from '../../thunks/fetchPresidents';
+import PresDetails from '../../components/PresDetails/PresDetails';
 
 class PresContainer extends Component {
 
   componentDidMount() {
     const url = 'http://localhost:3001/api/v1/presidents';
-    this.props.fetchPresidents(url)
+    this.props.fetchPresidents(url);
   }
 
   assignPres = () => {
-    let { presidents } = this.props
-  
+    let assignPres;
+    let { presidents } = this.props;
+    assignPres = presidents.map(president => {
+      return <PresDetails {...president} key={president.number}/>
+    });
+    return assignPres
   }
 
   render() {
