@@ -1,24 +1,28 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
+import { connect } from 'react-redux';
+import { fetchPresidents } from '../thunks/fetchPresidents';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component{
+  componentDidMount() {
+    const url = 'http://localhost:3001/api/v1/presidents';
+    this.props.fetchPresidents(url)
+  }
+  render() {
+    return (
+      <div className="App">
+  
+      </div>
+    );
+  }
 }
 
-export default App;
+export const mapStateToProps = ({presidents}) => ({
+  presidents
+});
+
+export const mapDispatchToProps = dispatch => ({
+  fetchPresidents: url => dispatch(fetchPresidents(url))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

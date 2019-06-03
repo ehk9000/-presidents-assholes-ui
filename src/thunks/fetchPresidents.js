@@ -5,14 +5,12 @@ export const fetchPresidents = (url) => {
     try {
       dispatch(isLoading(true));
       const response = await fetch(url);
-
       if(!response.ok) {
         throw Error(response.statusText);
       }
-      const presidents = response.json();
-      
-      dispatch(isLoading(false));
+      const presidents = await response.json();
       dispatch(setPresidents(presidents));
+      dispatch(isLoading(false));
     } catch (error) {
       dispatch(setError(error.message));
     }
