@@ -20,10 +20,21 @@ class PresContainer extends Component {
     return assignPres
   }
 
+  displayLoading = () => {
+    let displayLoading;
+    let { isLoading} = this.props;
+    if(isLoading) {
+      displayLoading = <p>Loading...</p>
+    } 
+    return displayLoading
+  }
+
   render() {
     const assignPres = this.assignPres();
+    const displayLoading = this.displayLoading();
     return (
       <main>
+        {displayLoading}
         {assignPres}
       </main>
 
@@ -32,8 +43,10 @@ class PresContainer extends Component {
 }
 
 
-export const mapStateToProps = ({ presidents }) => ({
-  presidents
+export const mapStateToProps = ({ presidents, isLoading, error }) => ({
+  presidents,
+  isLoading,
+  error
 });
 
 export const mapDispatchToProps = dispatch => ({
