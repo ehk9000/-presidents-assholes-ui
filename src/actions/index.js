@@ -4,7 +4,7 @@ export const getAllPresidents = (presidents) => ({
 });
 
 export const isLoading = (bool) => ({
-  type: 'SET_IS_LOADING',
+  type: 'IS_LOADING',
   isLoading: bool
 });
 
