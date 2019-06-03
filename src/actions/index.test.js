@@ -23,4 +23,29 @@ describe('actions', () => {
     expect(result).toEqual(expected);
 
   });
-})
+
+  it('should return a type of isLoading', () => {
+    const bool = true;
+    const expected = {
+      type: 'IS_LOADING',
+      isLoading: bool
+    };
+
+    const result = actions.isLoading(true);
+
+    expect(result).toEqual(expected);
+
+  });
+
+  it('should return a type of setError with error message', () => {
+    const error = 'Something went wrong';
+    const expected = {
+      type: 'SET_ERROR',
+      error
+    };
+
+    const result = actions.setError(error);
+
+    expect(result).toEqual(expected);
+  });
+});
