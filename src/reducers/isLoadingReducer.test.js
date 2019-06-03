@@ -13,8 +13,7 @@ describe('isLoadingReducer', () => {
   it('should return the state tree with updated state', () => {
     const expected = true;
     const action = actions.isLoading(true);
-    const result = isLoadingReducer(true, action);
-
+    const result = isLoadingReducer(false, action);
     expect(result).toEqual(expected)
   });
 
