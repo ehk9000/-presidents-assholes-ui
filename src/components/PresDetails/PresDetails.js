@@ -1,4 +1,5 @@
 import React from 'react';
+import './PresDetails.scss';
 
 const PresDetails = (props) => {
   let {

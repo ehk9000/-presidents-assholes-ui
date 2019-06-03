@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchPresidents } from '../../thunks/fetchPresidents';
 import PresDetails from '../../components/PresDetails/PresDetails';
+import './PresContainer.scss';
 
 class PresContainer extends Component {
 

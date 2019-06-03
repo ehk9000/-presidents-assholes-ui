@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import PresContainer from '../../containers/PresContainer/PresContainer';
 
 const App = () => {
@@ -9,7 +8,6 @@ const App = () => {
           <h1>Presidents and Assholes</h1>
         </header>
         <PresContainer/>
-
       </div>
     );
 }
