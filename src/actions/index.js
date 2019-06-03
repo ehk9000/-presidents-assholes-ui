@@ -1,5 +1,5 @@
-export const getAllPresidents = (presidents) => ({
-  type: 'GET_ALL_PRESIDENTS',
+export const setPresidents = (presidents) => ({
+  type: 'SET_PRESIDENTS',
   presidents
 });
 
